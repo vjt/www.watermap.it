@@ -1,0 +1,176 @@
+/* Handcrafted by vjt@openssl.it (C) 2009 */
+/* http://sindro.me/ */
+
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 0.7em;
+}
+
+a {
+  color: #008283;
+}
+
+a:visited, a:hover {
+  color: #000;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+strong {
+  font-weight: bold;
+}
+
+big {
+  font-size: 1.4em;
+}
+
+em {
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+div.page {
+  width: 950px;
+  margin: auto;
+}
+
+div.column {
+  width: 47%;
+}
+
+.left {
+  float: left;
+  /*margin-left: 5px;*/
+}
+
+.right {
+  float: right;
+  /*margin-right: 5px;*/
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.centered {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+#header {
+  width: 950px !important;
+  height: 116px;
+  margin-top: 15px;
+}
+
+#header .image {
+  display: block;
+  width: 100%;
+  height: 90%;
+  background: transparent url(../images/header.png) no-repeat center top;
+}
+
+#menu {
+  margin: 0 auto 20px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #008283;
+  font-size: 1.1em;
+}
+
+#menu a {
+  text-decoration: none;
+  padding: 2px 6px 1px;
+}
+
+#menu a:hover, #menu a.current {
+  background-color: #008283;
+  color: #fff;
+}
+
+#content {
+  position: relative;
+  height: 600px;
+}
+
+#content > div {
+  padding: 8px;
+}
+
+#info-bg {
+  background: transparent url(../images/fountain-bg.jpg) no-repeat left bottom;
+  min-height: 500px;
+}
+
+#info {
+}
+
+#info table {
+  border: 1px solid #666;
+  margin: 0 auto;
+}
+
+#info table thead th {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 4px;
+  border-right: 1px solid #fff;
+}
+#info table thead th:last-child { border-right: none !important; }
+
+#info table tbody td {
+  padding: 6px 4px;
+  font-weight: bold;
+}
+
+#info table tbody tr td {
+  border-bottom: 1px dotted #666;
+}
+#info table tbody tr:last-child td { border-bottom: none !important; }
+
+#action {
+  background-color: #d6eaea;
+  border: 2px solid #2fe4ed;
+  min-height: 496px;
+}
+
+.fberror {
+  text-align: center;
+  font-size: 1.4em;
+  color: #d00;
+  margin: 40px 0 0;
+}
+
+#badge {
+  background: transparent url(../images/badge.png) no-repeat scroll left top;
+  bottom: 2%;
+  height: 160px;
+  left: 37%;
+  position: absolute;
+  width: 160px;
+  opacity: 0.7;
+}
+
+#badge:hover {
+  opacity: 1.0;
+}
+
+/* neat, huh? ;) */
