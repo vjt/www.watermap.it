@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- (C) 2009 vjt@openssl.it / me@nhaima.org -->
+<!--  http://sindro.me / http://nhaima.org   -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="it" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="WATERMAP: La mappa delle fontane di Roma - WATERMAP &egrave; il primo strumento informativo cartaceo che segnala con semplicità dove trovare le sorgenti idriche per dissetarsi gratuitamente. Grazie alla distribuzione capillare su tutto il territorio del Comune di Roma .." />
+    <meta name="keywords" content="watermap,acqua,potabile,roma,fontana,mappa,green,ambiente,rispetto,ecologia" />
+    <title>Watermap</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+
+    <script src="javascripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.history_remote.min.js" type="text/javascript"></script>
+
+    <script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+
+    <!--[if IE 6]>
+    <script type="text/javascript">
+      var IE6UPDATE_OPTIONS = {
+        icons_path: 'http://static.ie6update.com/hosted/ie6update/images/',
+        message: 'Internet Explorer necessita di aggiornamenti per visualizzare correttamente questo sito web. Clicca qui per installare Internet Explorer 8.',
+        url: 'http://www.microsoft.com/italy/windows/internet-explorer/default.aspx'
+      };
+    </script>
+    <script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+    <style type="text/css">
+      #iesucks { height: 15px; }
+    </style>
+    <![endif]-->
+
+    <script src="javascripts/swfobject.js" type="text/javascript"></script>
+    <script src="javascripts/watermap.js" type="text/javascript"></script>
+
+    <script type="text/javascript">//<![CDATA[
+      var addthis_config;
+
+      $(function() {
+        $.ajaxHistory.initialize();
+
+        Watermap.initialize();
+        addthis_config = Watermap.addthis;
+
+        try {
+          Watermap.tracker = _gat._getTracker('UA-9450812-1');
+          Watermap.tracker._trackPageview();
+        } catch(err) { }
+
+      });
+    //]]></script>
+    <script src="http://s7.addthis.com/js/250/addthis_widget.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <!--[if IE 6]>
+      <div id="iesucks"> </div>
+    <![endif]-->    
+    <div class="hidden"><img src="images/icon.png" alt="Watermap Logo" /></div>
+    <div class="page" id="header">
+      <a class="image" href="/"> </a>
+      <div style="display:none" id="flash"> </div>
+    </div>
+    <div class="page upcase" id="menu">
+      <div class="left">
+        <a href="progetto.html">Il progetto</a>
+        <a href="video.html">Video</a>
+        <a href="analisi.html">Valori dell'acqua di Roma</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="articoli.html">Articoli</a>
+      </div>
+      <div class="right">
+        <a href="facebook.html" class="current">Scrivi la tua</a>
+        <a href="consigli.html">Consigli utili</a>
+        <a href="contatti.html">Contatti</a>
+        <a href="http://www.addthis.com/bookmark.php?pub=watermap&amp;url=http%3A%2F%2Fwww.watermap.it%2F" target="_blank">Condividi</a>
+      </div>
+      <div class="clear"> </div>
+    </div>
+    <div class="page" id="content">
+      <div id="badge"> </div>
+
+      <div id="info-bg" class="left column">
+        <div id="info">
+          <noscript>
+            <h2>Benvenuto!</h2>
+            <p>Poich&egrave; hai JavaScript disabilitato, le funzionalit&agrave; del sito sono ridotte.</p>
+            <p>Clicca su uno dei link qui in alto per maggiori informazioni sul progetto.</p>
+          </noscript>
+        </div>
+      </div>
+
+      <div id="action" class="right column">
+        <fb:comments xid="watermap_comments" width="455px" title="Watermap" simple="true" onlogin="document.location.href = Watermap.URI"></fb:comments>
+      </div>
+
+      <div id="banner-container" class="left column">
+        <div id="banner" style="display:none"> </div>
+      </div>
+
+      <div class="clear"> </div>
+    </div>
+  </body>
+
+</html>
