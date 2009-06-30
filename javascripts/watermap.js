@@ -12,7 +12,7 @@
 // 2009-06-25 - Improved interaction with Google Translate
 // 2009-07-01 - Added photos banner with dynamic positioning
 // 2009-07-01 - Removed facebook flickering
-// 2009-07-01 - Removed header banner
+// 2009-07-01 - Removed flash header
 //
 var Watermap = {
   URI: '',
@@ -78,18 +78,10 @@ var Watermap = {
 
     // Embed SWF only if flash player is installed, do not annoy the user
     // by asking him/her to update/install it etc. Degrade gracefully :).
-    // The header image is hidden here so it is shown if the user has JS
-    // disabled.
-    $('#header .image').hide();
-
+    //
     if (swfobject.hasFlashPlayerVersion('9.0.0')) {
-      $('#flash').show();
-      swfobject.embedSWF('flash/header.swf', 'flash', '951', '100', '9.0.0'); // XXX FIXME 951
-
       $('#banner').show();
       swfobject.embedSWF('flash/watermap.swf', 'banner', '450', '232', '9.0.0');
-    } else {
-      $('#header .image').fadeIn('slow');
     }
 
   },
