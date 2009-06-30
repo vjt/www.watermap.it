@@ -10,6 +10,9 @@
 // 2009-06-25 - Added SWFObject to load the new flash header
 // 2009-06-25 - Implemented safer Facebook initialization
 // 2009-06-25 - Improved interaction with Google Translate
+// 2009-07-01 - Added photos banner with dynamic positioning
+// 2009-07-01 - Removed facebook flickering
+// 2009-07-01 - Removed header banner
 //
 var Watermap = {
   URI: '',
@@ -40,6 +43,7 @@ var Watermap = {
     // widget lightbox.
     //
     $('#menu .right a[href*=.html]').click(function() {
+      Watermap.repositionBanner(this);
       return Watermap.menuClick(this, '#action');
     });
 
@@ -81,6 +85,9 @@ var Watermap = {
     if (swfobject.hasFlashPlayerVersion('9.0.0')) {
       $('#flash').show();
       swfobject.embedSWF('flash/header.swf', 'flash', '951', '100', '9.0.0'); // XXX FIXME 951
+
+      $('#banner').show();
+      swfobject.embedSWF('flash/watermap.swf', 'banner', '450', '232', '9.0.0');
     } else {
       $('#header .image').fadeIn('slow');
     }
@@ -109,17 +116,17 @@ var Watermap = {
       // if (console && console.log) console.log('pageview: ' + page);
     }
     
-    $(container).fadeOut('fast', function() {
+    $(container).fadeTo(0.01, {duration: 'fast', complete: function() {
       $.ajax({
         url: page,
         success: function(html) {
           Watermap.href(page);
 
           $(container).html(html);
-          $(container).fadeIn('fast');
+          $(container).fadeTo(1.0, {duration: 'fast'});
         }
       });
-    });
+    }});
     return false;
   },
 
@@ -127,6 +134,35 @@ var Watermap = {
   //
   shareClick: function() {
     return addthis_sendto();
+  },
+
+  // Reposition the banner: when facebook is loaded, align it to the left,
+  // because the right facebook wall is longer than the left column. When
+  // other pages are loaded, align it to the center of the page, making the
+  // container div full width. Add a nifty fade effect for coolness ;).
+  //
+  repositionBanner: function(link) {
+    var page = $(link).attr('href');
+    var container = $('#banner-container');
+    var transition = null;
+
+    if ($(link).hasClass('current')) { // XXX FIXME NOT DRY trigger event instead
+      return false;
+    }
+
+    if (page == 'facebook.html' && container.hasClass('page')) {
+      transition = function() { container.removeClass('page').addClass('column'); };
+    } else if (page != 'facebook.html' && container.hasClass('column')) {
+      transition = function() { container.removeClass('column').addClass('page'); };
+    }
+
+    if (transition != null) {
+      container.fadeTo(0.01, {duration: 'fast', complete: function() { 
+        transition();
+        container.fadeTo(1.0, {duration: 'fast'});
+      }});
+    }
+
   },
   
   // Initialize Facebook Connect. If the first parameter is true
@@ -158,4 +194,15 @@ var Watermap = {
   href: function(page) {
     document.location.href = Watermap.URI + '#/' + page;
   }
+};
+
+// Fade an HTML element to the specified amount. All the $.fn.animate()
+// options are passable via the second optional argument.
+//
+$.fn.fadeTo = function(amount) {
+  var options = $.extend({duration: 'slow'}, arguments[1] || {});
+
+  return this.each(function() {
+    $(this).animate({opacity: amount}, options);
+  });
 };

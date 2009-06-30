@@ -146,6 +146,13 @@ div.column {
 }
 #info table tbody tr:last-child td { border-bottom: none !important; }
 
+#banner-container {
+	margin: 10px 0 0;
+	padding: 10px 0 0 !important;
+	border-top: 2px solid #008283;
+	text-align: center;
+}
+
 #action {
   background-color: #d6eaea;
   border: 2px solid #2fe4ed;
