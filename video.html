@@ -1,14 +1,15 @@
 <!-- Yes we know that <embed> is not standards compliant, but we care most about cross-browser compatibility. -->
 <div style="margin: -8px 0 0">
   <div id="iphone-video" style="display:none">
-    <embed width="440" height="268" src="http://www.youtube.com/v/gDQuilbNz9Q&hl=en&fs=1&autoplay=1" type="application/x-shockwave-flash" wmode="transparent"></embed>
+    <embed width="440" height="268" src="http://www.youtube.com/v/gDQuilbNz9Q&hl=en&fs=1&autoplay=1" type="application/x-shockwave-flash"></embed>
   </div>
 
   <div id="video">
-    <object width="440" height="268" type="application/x-shockwave-flash" data="http://vimeo.com/moogaloop.swf?clip_id=5334123&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=1&amp;color=2feaed&amp;fullscreen=1&amp;autoplay=1">
-      <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=5334123&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=1&amp;color=2feaed&amp;fullscreen=1&amp;autoplay=1" />
-      <param name="allowfullscreen" value="true" />
-      <param name="allowscriptaccess" value="always" />
+    <object class="flash" width="440" height="268" type="application/x-shockwave-flash" data="http://vimeo.com/moogaloop.swf?clip_id=5334123&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=1&amp;color=2feaed&amp;fullscreen=1&amp;autoplay=1">
+      <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=5334123&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=1&amp;color=2feaed&amp;fullscreen=1&amp;autoplay=1"></param>
+      <param name="allowfullscreen" value="true"></param>
+      <param name="allowscriptaccess" value="always"></param>
+      <param name="wmode" value="opaque"></param>
     </object>
   </div>
 </div>

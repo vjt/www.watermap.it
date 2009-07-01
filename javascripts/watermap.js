@@ -74,6 +74,7 @@ var Watermap = {
       ui_click: true,
       ui_language: 'it',
       ui_cobrand: 'WATERMAP',
+      ui_hide_embed: false,
       data_track_linkbacks: true,
       data_use_flash: false
     };
