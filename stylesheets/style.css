@@ -1,6 +1,9 @@
 /* Handcrafted by vjt@openssl.it (C) 2009 */
 /* http://sindro.me/ */
 
+
+
+/** Base HTML Elements */
 body {
   font-family: helvetica, arial, verdana, sans-serif;
   font-size: 9pt;
@@ -35,10 +38,12 @@ big {
 }
 
 em {
-	font-style: italic;
-	font-size: 1.1em;
+  font-style: italic;
+  font-size: 1.1em;
 }
 
+
+/** Layout */
 div.page {
   width: 950px;
   margin: auto;
@@ -48,6 +53,9 @@ div.column {
   width: 47%;
 }
 
+
+
+/** Generic useful classes */
 .left {
   float: left;
   /*margin-left: 5px;*/
@@ -74,6 +82,16 @@ div.column {
   clear: both;
 }
 
+.fberror {
+  text-align: center;
+  font-size: 1.4em;
+  color: #d00;
+  margin: 40px 0 0;
+}
+
+
+
+/** Header */
 #header {
   width: 950px !important;
   height: 116px;
@@ -87,6 +105,9 @@ div.column {
   background: transparent url(../images/header.jpg) no-repeat center top;
 }
 
+
+
+/** Menu */
 #menu {
   margin: 0 auto 20px;
   padding-bottom: 2px;
@@ -104,6 +125,9 @@ div.column {
   color: #fff;
 }
 
+
+
+/** Content and boxes (#info and #action) */
 #content {
   position: relative;
   height: 600px;
@@ -121,6 +145,32 @@ div.column {
 #info {
 }
 
+#action {
+  background-color: #d6eaea;
+  border: 2px solid #2fe4ed;
+  min-height: 516px;
+}
+
+
+
+/** Badge */
+#badge {
+  background: transparent url(../images/badge.png) no-repeat scroll left top;
+  bottom: 2%;
+  height: 160px;
+  left: 37%;
+  position: absolute;
+  width: 160px;
+  opacity: 0.7;
+}
+
+#badge:hover {
+  opacity: 1.0;
+}
+
+
+
+/** Water values table */
 #info table {
   border: 1px solid #666;
   margin: 0 auto;
@@ -146,37 +196,79 @@ div.column {
 }
 #info table tbody tr:last-child td { border-bottom: none !important; }
 
+
+
+/** Banner */
 #banner-container {
-	margin: 10px 0 0;
-	padding: 10px 0 0 !important;
-	border-top: 2px solid #008283;
-	text-align: center;
-}
-
-#action {
-  background-color: #d6eaea;
-  border: 2px solid #2fe4ed;
-  min-height: 516px;
-}
-
-.fberror {
+  margin: 10px 0 0;
+  padding: 10px 0 0 !important;
+  border-top: 2px solid #008283;
   text-align: center;
-  font-size: 1.4em;
-  color: #d00;
-  margin: 40px 0 0;
 }
 
-#badge {
-  background: transparent url(../images/badge.png) no-repeat scroll left top;
-  bottom: 2%;
-  height: 160px;
-  left: 37%;
+
+
+/** Contacts page */
+#contacts {
   position: absolute;
-  width: 160px;
-  opacity: 0.7;
+  width: 454px;
+}
+#contacts * {
+  text-align: center;
 }
 
-#badge:hover {
+#contacts .logo, #contacts .email {
+  margin: 40px 0;
+}
+
+#contacts .business {
+  margin: 40px 0 50px;
+}
+
+#contacts .business big {
+  margin: 8px 0;
+  display: block;
+  font-size: 1.6em;
+}
+
+#contacts .people {
+  margin: 30px 0;
+  line-height: 1.3;
+}
+
+#contacts .people em {
+  display: block;
+  margin-bottom: 3px;
+  position: relative;
+  top: -5px;
+}
+
+#contacts .people .names {
+  position: relative;
+  top: -6px;
+  font-size: 1.1em;
+}
+
+#contacts .people .names a.highlighted, #contacts .people .names a:hover {
+  color: #fff;
+  background-color: #008283;
+	padding: 2px 2px 1px 2px;
+}
+
+#contacts .people .pic {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  background: transparent url(../images/icon.png) no-repeat scroll center 30%;
+  opacity: 0.8;
+}
+#contacts .people .left.pic { left: 50px; }
+#contacts .people .right.pic { right: 50px; }
+
+#contacts .people .pic.highlighted {
+  border: 2px solid #008283;
+  margin: -2px;
   opacity: 1.0;
 }
 

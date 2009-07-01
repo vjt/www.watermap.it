@@ -16,6 +16,7 @@
 // 2009-07-02 - Added a videoTest that checks for iPhone
 // 2009-07-02 - Fixed IE incongruencies
 // 2009-07-02 - Added Opera support, by disabling FB features
+// 2009-07-02 - Implemented contacts page highlighting
 //
 var Watermap = {
   URI: '',
@@ -63,13 +64,13 @@ var Watermap = {
     Watermap.URI = document.location.href.replace(/#.*/, '');
 
     // Load first items
+    if ($('#menu .left a.current').length == 0) {
+      $('#menu .left a:first').click();
+    }
+
     var m;
     if (m = document.location.href.match(/#\/([\w-]+)/)) {
       $('#menu a[href^=' + m[1] + ']').click();
-    }
-
-    if ($('#menu .left a.current').length == 0) {
-      $('#menu .left a:first').click();
     }
 
     if ($.browser.opera) {
@@ -224,6 +225,26 @@ var Watermap = {
         '<p class="fberror">Prova a <a href="' + Watermap.URI + '">ricaricare</a> la pagina.</p>');
     }
 
+  },
+
+  // Implements highlighting on hover on the contacts page: when the mouse hovers the
+  // profile pictures, a corresponding <a> inside the .names div is searched, and it
+  // is added the "highlighted" class if it's found.
+  //
+  highlightContactsOnHover: function() {
+    var toggleNamesHighlight = function() {
+      var href = $(this).attr('href');
+      $(this).parent('div').toggleClass('highlighted');
+      $('#contacts .people .names a[href=' + href + ']').toggleClass('highlighted');
+    }
+
+    var togglePicsHighlight = function() {
+      var href = $(this).attr('href');
+      $('#contacts .people .pic a[href=' + href + ']').parent('div').toggleClass('highlighted');
+    }
+
+    $('#contacts .people .pic a').hover(toggleNamesHighlight, toggleNamesHighlight);
+    $('#contacts .people .names a').hover(togglePicsHighlight, togglePicsHighlight);
   },
   
   // Constructs and updates the document location by concatenating
