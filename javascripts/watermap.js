@@ -15,6 +15,7 @@
 // 2009-07-01 - Removed flash header
 // 2009-07-02 - Added a videoTest that checks for iPhone
 // 2009-07-02 - Fixed IE incongruencies
+// 2009-07-02 - Added Opera support, by disabling FB features
 //
 var Watermap = {
   URI: '',
@@ -29,8 +30,10 @@ var Watermap = {
   // - If no link is active on the left menu, the first one is activated.
   //
   initialize: function() {
-    // Initialize Facebook
-    Watermap.initFB(true);
+    // Initialize Facebook if not running on Opera
+    if (!$.browser.opera) {
+      Watermap.initFB(true);
+    }
 
     // Set event handlers: left menu clicks
     // load via AJAX the content pointed by
@@ -45,7 +48,10 @@ var Watermap = {
     // widget lightbox.
     //
     $('#menu .right a[href*=.html]').click(function() {
-      Watermap.repositionBanner(this);
+      if (!$.browser.opera) {
+        Watermap.repositionBanner(this);
+      }
+
       return Watermap.menuClick(this, '#action');
     });
 
@@ -64,6 +70,14 @@ var Watermap = {
 
     if ($('#menu .left a.current').length == 0) {
       $('#menu .left a:first').click();
+    }
+
+    if ($.browser.opera) {
+      if ($('#menu .right a[href=facebook.html]').hasClass('current')) {
+        $('#menu a[href=consigli.html]').click();
+      }
+
+      $('#banner-container').removeClass('column').addClass('page');
     }
 
     // Configure addthis services
@@ -189,6 +203,16 @@ var Watermap = {
   // @param full Boolean
   //
   initFB: function(full) {
+    if ($.browser.opera) {
+      $('#action').html('<p class="fberror" style="text-align:left;">Caro utente Opera,</p>' +
+        '<p class="fberror">ci dispiace, ma questa bacheca &egrave; realizzata con facebook connect, il quale non funziona, attualmente, con il tuo browser.</p>' +
+        '<p class="fberror">Per leggere e scrivere commenti in questa sezione, ti preghiamo di usare un altro browser.</p>' +
+        '<p class="fberror">Grazie e... perdonaci per il disagio :-)</p>' +
+        '<p class="fberror" style="text-align:right;"><em>Watermap staff</em></p>'
+      );
+      return;
+    }
+
     try {
       if (full) {
         FB.init('c4c9f3f526ac6853492f3abf894f7d20', 'xd_receiver.html');
