@@ -252,7 +252,7 @@ div.column {
 #contacts .people .names a.highlighted, #contacts .people .names a:hover {
   color: #fff;
   background-color: #008283;
-	padding: 2px 2px 1px 2px;
+	padding: 1px 2px;
 }
 
 #contacts .people .pic {
