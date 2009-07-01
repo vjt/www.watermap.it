@@ -13,6 +13,8 @@
 // 2009-07-01 - Added photos banner with dynamic positioning
 // 2009-07-01 - Removed facebook flickering
 // 2009-07-01 - Removed flash header
+// 2009-07-02 - Added a videoTest that checks for iPhone
+// 2009-07-02 - Fixed IE incongruencies
 //
 var Watermap = {
   URI: '',
@@ -77,11 +79,13 @@ var Watermap = {
     };
 
     // Embed SWF only if flash player is installed, do not annoy the user
-    // by asking him/her to update/install it etc. Degrade gracefully :).
+    // by asking him/her to update/install it etc. Degrade gracefully :-)
     //
     if (swfobject.hasFlashPlayerVersion('9.0.0')) {
       $('#banner').show();
       swfobject.embedSWF('flash/watermap.swf', 'banner', '450', '232', '9.0.0');
+    } else {
+      $('#banner-container').remove();
     }
 
   },
@@ -155,6 +159,26 @@ var Watermap = {
       }});
     }
 
+  },
+
+  // Check whether the users has got the 9.0.0 flash player, and embed it if he/she does.
+  // If we're being rendered on the iPhone, remove the #video object, and show the other
+  // one (#iphone-video) that contains an <embed> that MobileSafari replaces with an YT
+  // poster image, making it viewable from the iPhone too.
+  // If no flash player neither iPhone is available, show an error message into the box.
+  //
+  videoTest: function(options) {
+
+    if (swfobject.hasFlashPlayerVersion('9.0.0')) {
+      $('#iphone-video').remove();
+    } else if (/iPhone/.test(navigator.userAgent)) {
+      $('#video').remove();
+      $('#iphone-video').show();
+    } else {
+      $('#video').html(
+        '<p class="fberror">Hai bisogno di flash player per visualizzare il video</p>'
+      );
+    }
   },
   
   // Initialize Facebook Connect. If the first parameter is true
