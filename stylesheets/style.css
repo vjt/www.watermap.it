@@ -77,13 +77,13 @@ div.column {
 #header {
   width: 950px !important;
   height: 116px;
-  margin-top: 15px;
 }
 
 #header .image {
   display: block;
   width: 100%;
   height: 90%;
+  margin-top: 15px;
   background: transparent url(../images/header.jpg) no-repeat center top;
 }
 
