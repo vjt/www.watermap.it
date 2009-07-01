@@ -20,16 +20,23 @@
     <script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
 
     <!--[if IE 6]>
-    <script type="text/javascript">
+    <script type="text/javascript">//<![CDATA[
+      // Ask users to update using the IE6update clever trick
       var IE6UPDATE_OPTIONS = {
         icons_path: 'http://static.ie6update.com/hosted/ie6update/images/',
         message: 'Internet Explorer necessita di aggiornamenti per visualizzare correttamente questo sito web. Clicca qui per installare Internet Explorer 8.',
         url: 'http://www.microsoft.com/italy/windows/internet-explorer/default.aspx'
       };
-    </script>
+    //]]></script>
     <script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
     <style type="text/css">
       #iesucks { height: 15px; }
+    </style>
+    <![endif]-->
+
+    <!--[if IE]>
+    <style type="text/css">
+      body { font-family: tahoma, sans-serif !important; }
     </style>
     <![endif]-->
 
