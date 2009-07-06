@@ -18,6 +18,9 @@
 // 2009-07-02 - Added Opera support, by disabling FB features
 // 2009-07-02 - Implemented contacts page highlighting
 // 2009-07-06 - Removed contacts page highlighting due to new layout
+// 2009-07-06 - Added Array.include() that mimics Ruby's one, using $.inArray
+// 2009-07-06 - Reposition banner on the left on facebook and suggestions pages
+// 2009-07-06 - Fixed a nasty bug of Ajax History with Firefox 3.5
 //
 var Watermap = {
   URI: '',
@@ -65,13 +68,13 @@ var Watermap = {
     Watermap.URI = document.location.href.replace(/#.*/, '');
 
     // Load first items
-    if ($('#menu .left a.current').length == 0) {
-      $('#menu .left a:first').click();
-    }
-
     var m;
     if (m = document.location.href.match(/#\/([\w-]+)/)) {
       $('#menu a[href^=' + m[1] + ']').click();
+    }
+
+    if ($('#menu .left a.current').length == 0) {
+      $('#menu .left a:first').click();
     }
 
     if ($.browser.opera) {
@@ -81,6 +84,8 @@ var Watermap = {
 
       $('#banner-container').removeClass('column').addClass('page');
     }
+
+    $.ajaxHistory.initialize();
 
     // Configure addthis services
     Watermap.addthis = {
@@ -158,14 +163,15 @@ var Watermap = {
     var page = $(link).attr('href');
     var container = $('#banner-container');
     var transition = null;
+    var long_pages = ['facebook.html', 'consigli.html'];
 
     if ($(link).hasClass('current')) { // XXX FIXME NOT DRY trigger event instead
       return false;
     }
 
-    if (page == 'facebook.html' && container.hasClass('page')) {
+    if (long_pages.include(page) && container.hasClass('page')) {
       transition = function() { container.removeClass('page').addClass('column'); };
-    } else if (page != 'facebook.html' && container.hasClass('column')) {
+    } else if (!long_pages.include(page) && container.hasClass('column')) {
       transition = function() { container.removeClass('column').addClass('page'); };
     }
 
@@ -248,4 +254,8 @@ $.fn.fadeTo = function(amount) {
   return this.each(function() {
     $(this).animate({opacity: amount}, options);
   });
+};
+
+Array.prototype.include = function(item) {
+  return $.inArray(item, this) >= 0;
 };

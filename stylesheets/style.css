@@ -10,9 +10,9 @@ body {
 }
 
 h2 {
-  font-size: 1.3em;
+  font-size: 1.45em;
   font-weight: bold;
-  margin-bottom: 0.7em;
+  margin-bottom: 0.9em;
 }
 
 a {
@@ -161,7 +161,7 @@ div.column {
   left: 37%;
   position: absolute;
   width: 160px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 #badge:hover {
@@ -196,6 +196,32 @@ div.column {
 }
 #info table tbody tr:last-child td { border-bottom: none !important; }
 
+
+
+/** FAQ definition list */
+.publications dl {
+	margin: 5px 0;
+}
+
+.publications dl dd {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.15em;
+	margin: 25px 0 10px;
+}
+
+.publications dl dt {
+	line-height: 1.2;
+}
+
+.publications h2 {
+	margin-bottom: 0.2em;
+}
+
+.publications .date {
+	font-style: italic;
+	margin-bottom: 1.2em;
+}
 
 
 /** Banner */
