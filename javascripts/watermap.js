@@ -17,6 +17,7 @@
 // 2009-07-02 - Fixed IE incongruencies
 // 2009-07-02 - Added Opera support, by disabling FB features
 // 2009-07-02 - Implemented contacts page highlighting
+// 2009-07-06 - Removed contacts page highlighting due to new layout
 //
 var Watermap = {
   URI: '',
@@ -227,26 +228,6 @@ var Watermap = {
 
   },
 
-  // Implements highlighting on hover on the contacts page: when the mouse hovers the
-  // profile pictures, a corresponding <a> inside the .names div is searched, and it
-  // is added the "highlighted" class if it's found.
-  //
-  highlightContactsOnHover: function() {
-    var toggleNamesHighlight = function() {
-      var href = $(this).attr('href');
-      $(this).parent('div').toggleClass('highlighted');
-      $('#contacts .people .names a[href=' + href + ']').toggleClass('highlighted');
-    }
-
-    var togglePicsHighlight = function() {
-      var href = $(this).attr('href');
-      $('#contacts .people .pic a[href=' + href + ']').parent('div').toggleClass('highlighted');
-    }
-
-    $('#contacts .people .pic a').hover(toggleNamesHighlight, toggleNamesHighlight);
-    $('#contacts .people .names a').hover(togglePicsHighlight, togglePicsHighlight);
-  },
-  
   // Constructs and updates the document location by concatenating
   // the base URI with an "#/" and the page name passed as the 2nd
   // parameter.
