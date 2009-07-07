@@ -19,8 +19,12 @@
 // 2009-07-02 - Implemented contacts page highlighting
 // 2009-07-06 - Removed contacts page highlighting due to new layout
 // 2009-07-06 - Added Array.include() that mimics Ruby's one, using $.inArray
-// 2009-07-06 - Reposition banner on the left on facebook and suggestions pages
-// 2009-07-06 - Fixed a nasty bug of Ajax History with Firefox 3.5
+// 2009-07-06 - Reposition banner on the left when browsing facebook and
+//              suggestions pages
+// 2009-07-06 - Fixed a nasty bug of Ajax History with Firefox 3.5 that caused
+//              continuous ajax page loads
+// 2009-07-07 - Fixed a FB connect bug with IE7+, by adding a / in front of
+//              xd_receiver.html. Nasty!
 //
 var Watermap = {
   URI: '',
@@ -223,7 +227,7 @@ var Watermap = {
 
     try {
       if (full) {
-        FB.init('c4c9f3f526ac6853492f3abf894f7d20', 'xd_receiver.html');
+        FB.init('c4c9f3f526ac6853492f3abf894f7d20', '/xd_receiver.html');
       } else {
         FB.init();
       }
