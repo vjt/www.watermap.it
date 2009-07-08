@@ -282,11 +282,12 @@ div.column {
 #contacts .people h2 { /* Role */
 	font-weight: normal;
 	color: #008283;
-	font-size: 1.3em;
+	font-size: 1.15em;
 }
 
 #contacts .people .name {
-  font-size: 1.3em;
+  font-size: 1.16em;
+	line-height: 1.7em;
 }
 
 #contacts .people .name a {
@@ -297,11 +298,12 @@ div.column {
 #contacts .people .name a:hover {
   color: #fff;
   background-color: #008283;
+	padding: 2px 1px 0;
 }
 
 #contacts .people .email {
 	color: #2fe4ed;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 
