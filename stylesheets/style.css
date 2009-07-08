@@ -200,27 +200,27 @@ div.column {
 
 /** FAQ definition list */
 .publications dl {
-	margin: 5px 0;
+  margin: 5px 0;
 }
 
 .publications dl dd {
-	font-weight: bold;
-	font-style: italic;
-	font-size: 1.15em;
-	margin: 25px 0 10px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.15em;
+  margin: 25px 0 10px;
 }
 
 .publications dl dt {
-	line-height: 1.2;
+  line-height: 1.2;
 }
 
 .publications h2 {
-	margin-bottom: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 .publications .date {
-	font-style: italic;
-	margin-bottom: 1.2em;
+  font-style: italic;
+  margin-bottom: 1.2em;
 }
 
 
@@ -236,11 +236,11 @@ div.column {
 
 /** Contacts page */
 #contacts {
-	padding: 0 42px 0 0;
+  padding: 0 42px 0 0;
 }
 
 #contacts h1, #contacts h2, #contacts p, #contacts address, #contacts .logo {
-	text-align: right;
+  text-align: right;
 }
 
 #contacts > .business, #contacts > .email {
@@ -248,22 +248,22 @@ div.column {
 }
 
 #contacts > .logo {
-	margin: 25px 0;
+  margin: 25px 0;
 }
 
 #contacts > .email {
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 #contacts .business h1 {
   margin: 6px 0;
   font-size: 1.6em;
-	color: #008283;
+  color: #008283;
 }
 
 #contacts .business address a {
-	color: #000;
-	text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 #contacts .people {
@@ -272,44 +272,44 @@ div.column {
 }
 
 #contacts .person {
-	margin: 15px 0 0;
+  margin: 15px 0 0;
 }
 
 #contacts .people .description * {
-	margin: 0;
+  margin: 0;
 }
 
 #contacts .people h2 { /* Role */
-	font-weight: normal;
-	color: #008283;
-	font-size: 1.15em;
+  font-weight: normal;
+  color: #008283;
+  font-size: 1.15em;
 }
 
 #contacts .people .name {
   font-size: 1.16em;
-	line-height: 1.7em;
+  line-height: 1.7em;
 }
 
 #contacts .people .name a {
-	color: #000;
-	text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 #contacts .people .name a:hover {
   color: #fff;
   background-color: #008283;
-	padding: 2px 1px 0;
+  padding: 2px 1px 0;
 }
 
 #contacts .people .email {
-	color: #2fe4ed;
-	font-size: 1.1em;
+  color: #2fe4ed;
+  font-size: 1.1em;
 }
 
 
 #contacts .people .pic {
-	border: 2px solid #2fe4ed;
-	margin: 0 0 0 12px;
+  border: 2px solid #2fe4ed;
+  margin: 0 0 0 12px;
   z-index: 2;
   background: transparent url(../images/icon.png) no-repeat scroll center 30%;
   opacity: 0.8;
