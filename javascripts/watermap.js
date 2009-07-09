@@ -25,6 +25,8 @@
 //              continuous ajax page loads
 // 2009-07-07 - Fixed a FB connect bug with IE7+, by adding a / in front of
 //              xd_receiver.html. Nasty!
+// 2009-07-09 - When clicking on "Chi siamo", the right pane automagically
+//              shows the "Contatti" page.
 //
 var Watermap = {
   URI: '',
@@ -50,6 +52,13 @@ var Watermap = {
     //
     $('#menu .left a').click(function() {
       return Watermap.menuClick(this, '#info');
+    });
+
+    // When clicking on "Chi siamo", update the right pane
+    // with the "Contatti" page
+    //
+    $('#menu .left a[href=chi-siamo.html]').click(function() {
+      $('#menu .right a[href=contatti.html]').click();
     });
 
     // Right menu clicks as well except for
