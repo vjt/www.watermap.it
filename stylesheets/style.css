@@ -238,6 +238,10 @@ div.column {
   text-align: center;
 }
 
+#banner-container object {
+	margin-bottom: 10px;
+}
+
 
 
 /** Contacts page */

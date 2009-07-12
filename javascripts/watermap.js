@@ -27,6 +27,7 @@
 //              xd_receiver.html. Nasty!
 // 2009-07-09 - When clicking on "Chi siamo", the right pane automagically
 //              shows the "Contatti" page.
+// 2009-07-12 - Added iPhone banner
 //
 var Watermap = {
   URI: '',
@@ -117,8 +118,9 @@ var Watermap = {
     // by asking him/her to update/install it etc. Degrade gracefully :-)
     //
     if (swfobject.hasFlashPlayerVersion('9.0.0')) {
-      $('#banner').show();
-      swfobject.embedSWF('flash/watermap.swf', 'banner', '450', '232', '9.0.0');
+      $('#photos-banner, #iphone-banner').show();
+      swfobject.embedSWF('flash/watermap.swf', 'photos-banner', '460', '250', '9.0.0');
+      swfobject.embedSWF('flash/iphone.swf', 'iphone-banner', '460', '250', '9.0.0');
     } else {
       $('#banner-container').remove();
     }
