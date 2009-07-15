@@ -174,6 +174,28 @@ div.column {
 	height: 100%;
 }
 
+/** Promo text */
+#info .video.promo {
+	margin-top: 1.2em;
+}
+
+#info .video.promo p {
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#info .promo {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+#info .promo a {
+	text-decoration: none;
+}
+
+#info .promo a:hover {
+	text-decoration: underline;
+}
 
 
 /** Water values table */

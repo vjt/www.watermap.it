@@ -51,7 +51,7 @@ var Watermap = {
     // load via AJAX the content pointed by
     // the HREF attribute.
     //
-    $('#menu .left a').click(function() {
+    $('#menu .left a[href*=.html]').click(function() {
       return Watermap.menuClick(this, '#info');
     });
 
