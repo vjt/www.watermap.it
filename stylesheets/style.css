@@ -276,11 +276,11 @@ div.column {
 }
 
 #contacts > .business, #contacts > .email {
-  margin: 5px 0 0;
+  margin: -5px 0 0 0;
 }
 
 #contacts > .logo {
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
 #contacts > .email {
@@ -304,7 +304,7 @@ div.column {
 }
 
 #contacts .person {
-  margin: 15px 0 0;
+  margin: 10px 0 0;
 }
 
 #contacts .people .description * {
@@ -350,6 +350,16 @@ div.column {
 #contacts .people .pic:hover {
   border: 2px solid #008283;
   opacity: 1.0;
+}
+
+#contacts .brochure {
+	border-top: 1px solid #2fe4ed;
+	margin: 0.7em 0 0;
+	padding: 0.4em 0 0;
+}
+
+#contacts .brochure a {
+	font-style: italic;
 }
 
 /* neat, huh? ;) */
