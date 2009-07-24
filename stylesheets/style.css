@@ -327,9 +327,11 @@ div.column {
   text-decoration: none;
 }
 
-#contacts .people .name a:hover {
+#contacts .people .name a:hover, #contacts .email a:hover {
   color: #fff;
   background-color: #008283;
+}
+#contacts .people .name a:hover {
   padding: 2px 1px 0;
 }
 
