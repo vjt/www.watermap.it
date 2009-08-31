@@ -29,6 +29,8 @@
 //              shows the "Contatti" page.
 // 2009-07-12 - Added iPhone banner
 //
+// 2009-08-31 - Removed the CMS functions, because most of the content is now
+//              on the blog.
 var Watermap = {
   URI: '',
   tracker : null,
@@ -47,59 +49,12 @@ var Watermap = {
       Watermap.initFB(true);
     }
 
-    // Set event handlers: left menu clicks
-    // load via AJAX the content pointed by
-    // the HREF attribute.
-    //
-    $('#menu .left a[href*=.html]').click(function() {
-      return Watermap.menuClick(this, '#info');
-    });
-
-    // When clicking on "Chi siamo", update the right pane
-    // with the "Contatti" page
-    //
-    $('#menu .left a[href=chi-siamo.html]').click(function() {
-      $('#menu .right a[href=contatti.html]').click();
-    });
-
-    // Right menu clicks as well except for
-    // the last one, that opens the Addthis
-    // widget lightbox.
-    //
-    $('#menu .right a[href*=.html]').click(function() {
-      if (!$.browser.opera) {
-        Watermap.repositionBanner(this);
-      }
-
-      return Watermap.menuClick(this, '#action');
-    });
-
     $('#menu .right a[href*=http://www.addthis.com/]').click(function() {
-      return Watermap.shareClick();
+      return addthis_sendto();
     });
 
     // Save base URI
     Watermap.URI = document.location.href.replace(/#.*/, '');
-
-    // Load first items
-    var m;
-    if (m = document.location.href.match(/#\/([\w-]+)/)) {
-      $('#menu a[href^=' + m[1] + ']').click();
-    }
-
-    if ($('#menu .left a.current').length == 0) {
-      $('#menu .left a:first').click();
-    }
-
-    if ($.browser.opera) {
-      if ($('#menu .right a[href=facebook.html]').hasClass('current')) {
-        $('#menu a[href=consigli.html]').click();
-      }
-
-      $('#banner-container').removeClass('column').addClass('page');
-    }
-
-    $.ajaxHistory.initialize();
 
     // Configure addthis services
     Watermap.addthis = {
@@ -114,89 +69,9 @@ var Watermap = {
       data_use_flash: false
     };
 
-    // Embed SWF only if flash player is installed, do not annoy the user
-    // by asking him/her to update/install it etc. Degrade gracefully :-)
+    // Show youtube video for the iPhone, remove it if no flash player is available
     //
-    if (swfobject.hasFlashPlayerVersion('9.0.0')) {
-      $('#photos-banner, #iphone-banner').show();
-      swfobject.embedSWF('flash/watermap.swf', 'photos-banner', '460', '250', '9.0.0');
-      swfobject.embedSWF('flash/iphone.swf', 'iphone-banner', '460', '250', '9.0.0');
-    } else {
-      $('#banner-container').remove();
-    }
-
-  },
-
-  // This function is called when a menu link is clicked.
-  // It updates the container specified with the second parameter
-  // with the contents of the page referenced by the link, loaded
-  // via AJAX.
-  //
-  // @param link      jQuery - the receiver link
-  // @param container jQuery - the container to update
-  // 
-  menuClick: function(link, container) {
-    var page = $(link).attr('href');
-    if ($(link).hasClass('current')) {
-      return false;
-    }
-
-    $(link).siblings().removeClass('current');
-    $(link).addClass('current');
-
-    if (Watermap.tracker) {
-      Watermap.tracker._trackPageview('/' + page);
-      // if (console && console.log) console.log('pageview: ' + page);
-    }
-    
-    $(container).fadeTo(0.01, {duration: 'fast', complete: function() {
-      $.ajax({
-        url: page,
-        success: function(html) {
-          Watermap.href(page);
-
-          $(container).html(html);
-          $(container).fadeTo(1.0, {duration: 'fast'});
-        }
-      });
-    }});
-    return false;
-  },
-
-  // Calls the addthis_sendto() function
-  //
-  shareClick: function() {
-    return addthis_sendto();
-  },
-
-  // Reposition the banner: when facebook is loaded, align it to the left,
-  // because the right facebook wall is longer than the left column. When
-  // other pages are loaded, align it to the center of the page, making the
-  // container div full width. Add a nifty fade effect for coolness ;).
-  //
-  repositionBanner: function(link) {
-    var page = $(link).attr('href');
-    var container = $('#banner-container');
-    var transition = null;
-    var long_pages = ['facebook.html', 'consigli.html'];
-
-    if ($(link).hasClass('current')) { // XXX FIXME NOT DRY trigger event instead
-      return false;
-    }
-
-    if (long_pages.include(page) && container.hasClass('page')) {
-      transition = function() { container.removeClass('page').addClass('column'); };
-    } else if (!long_pages.include(page) && container.hasClass('column')) {
-      transition = function() { container.removeClass('column').addClass('page'); };
-    }
-
-    if (transition != null) {
-      container.fadeTo(0.01, {duration: 'fast', complete: function() { 
-        transition();
-        container.fadeTo(1.0, {duration: 'fast'});
-      }});
-    }
-
+    Watermap.videoTest();
   },
 
   // Check whether the users has got the 9.0.0 flash player, and embed it if he/she does.
@@ -213,6 +88,7 @@ var Watermap = {
       $('#video').remove();
       $('#iphone-video').show();
     } else {
+      $('#iphone-video').remove();
       $('#video').html(
         '<p class="fberror">Hai bisogno di flash player per visualizzare il video</p>'
       );
@@ -247,16 +123,6 @@ var Watermap = {
         '<p class="fberror">Prova a <a href="' + Watermap.URI + '">ricaricare</a> la pagina.</p>');
     }
 
-  },
-
-  // Constructs and updates the document location by concatenating
-  // the base URI with an "#/" and the page name passed as the 2nd
-  // parameter.
-  //
-  // @param page String
-  //
-  href: function(page) {
-    document.location.href = Watermap.URI + '#/' + page;
   }
 };
 

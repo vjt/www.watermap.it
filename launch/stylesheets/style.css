@@ -195,13 +195,13 @@ div.column {
   background: transparent url(../images/button-plus.png) no-repeat left top;
 }
 
-#homeprint .video {
+#homeprint #video {
   width: 450px;
   height: 260px;
   background: #8eccd7 url(../images/video-spinner.gif) no-repeat center center;
 }
 
-#homeprint .video object {
+#homeprint #video object {
   display: block;
   position: relative;
   top: 5px;
