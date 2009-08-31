@@ -93,131 +93,131 @@ div.column {
 #header {
   width: 950px !important;
   height: 116px;
-	background-color: #f5fbfe;
+  background-color: #f5fbfe;
 }
 
 #header .image {
   display: block;
   width: 400px;
   height: 93px;
-	position: relative;
-	top: 10px;
-	left: 25px;
+  position: relative;
+  top: 10px;
+  left: 25px;
   background: transparent url(../images/logo.png) no-repeat left top;
 }
 
 #header .blurb {
-	display: block;
-	width: 460px;
-	height: 80px;
-	position: relative;
-	right: 15px;
-	top: 25px;
-	text-align: left;
-	margin: 0;
-	font-size: 1.1em;
-	color: #008182;
+  display: block;
+  width: 460px;
+  height: 80px;
+  position: relative;
+  right: 15px;
+  top: 25px;
+  text-align: left;
+  margin: 0;
+  font-size: 1.1em;
+  color: #008182;
 }
 
 #header .blurb:hover {
-	/* TODO */
+  /* TODO */
 }
 
 
 /** Homeprint */
 #homeprint .banner {
-	width: 450px;
-	height: 580px;
-	background: transparent url(../images/homeprint-bg.jpg) no-repeat left top;
+  width: 450px;
+  height: 580px;
+  background: transparent url(../images/homeprint-bg.jpg) no-repeat left top;
 }
 
 #homeprint .banner .link {
-	display: block;
-	position: relative;
-	top: 20px;
-	left: 30px;
-	width: 370px;
-	height: 310px;
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 30px;
+  width: 370px;
+  height: 310px;
 }
 
 #homeprint .banner .photos {
-	position: relative;
-	top: 50px;
-	left: 130px;
-	font-size: 1.8em;
-	width: 220px;
-	margin: 0;
+  position: relative;
+  top: 50px;
+  left: 130px;
+  font-size: 1.8em;
+  width: 220px;
+  margin: 0;
 }
 
 #homeprint .content {
-	width: 500px;
-	height: 580px;
-	background: transparent url(../images/bg.png) repeat-x left top;
+  width: 500px;
+  height: 580px;
+  background: transparent url(../images/bg.png) repeat-x left top;
 }
 
 #homeprint .content .action {
-	margin: 40px 0 40px;
-	width: 450px;
+  margin: 40px 0 40px;
+  width: 450px;
 }
 
 #homeprint .content .action p {
-	font-size: 1.5em;
-	padding: 8px 0 0 25px;
-	width: 180px;
-	height: 32px;
-	background: transparent url(../images/checklist.png) no-repeat left top;
-	position: relative;
-	top: 18px;
-	left: 5px;
+  font-size: 1.5em;
+  padding: 8px 0 0 25px;
+  width: 180px;
+  height: 32px;
+  background: transparent url(../images/checklist.png) no-repeat left top;
+  position: relative;
+  top: 18px;
+  left: 5px;
 }
 
 #homeprint .button {
-	width: 70px;
-	height: 70px;
-	margin-left: 10px;
-	opacity: 0.45;
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+  opacity: 0.45;
 }
 
 #homeprint .button:hover, #homeprint .button.download:hover {
-	opacity: 1.0;
+  opacity: 1.0;
 }
 
 #homeprint .button.download {
-	background: transparent url(../images/button-download.png) no-repeat left top;
-	opacity: 0.85;
+  background: transparent url(../images/button-download.png) no-repeat left top;
+  opacity: 0.85;
 }
 
 #homeprint .button.inspect {
-	background: transparent url(../images/button-spotlight.png) no-repeat left top;
+  background: transparent url(../images/button-spotlight.png) no-repeat left top;
 }
 
 #homeprint .button.share {
-	background: transparent url(../images/button-plus.png) no-repeat left top;
+  background: transparent url(../images/button-plus.png) no-repeat left top;
 }
 
 #homeprint .video {
-	width: 450px;
-	height: 260px;
-	background: #8eccd7 url(../images/video-spinner.gif) no-repeat center center;
+  width: 450px;
+  height: 260px;
+  background: #8eccd7 url(../images/video-spinner.gif) no-repeat center center;
 }
 
 #homeprint .video object {
-	display: block;
-	position: relative;
-	top: 5px;
-	left: 5px;
+  display: block;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 
 #content {
-	background: transparent url(../images/bg-content.png) repeat-x scroll left top;
+  background: transparent url(../images/bg-content.png) repeat-x scroll left top;
 }
 
 #content .separator {
-	text-align: center;
-	font-size: 1.2em;
-	position: relative;
-	top: -120px;
-	line-height: 1.4;
+  text-align: center;
+  font-size: 1.2em;
+  position: relative;
+  top: -120px;
+  line-height: 1.4;
 }
 
 
@@ -238,9 +238,9 @@ div.column {
 
 
 #badge a {
-	display: block;
-	width: 100%;
-	height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 #content .vision {
@@ -253,13 +253,13 @@ div.column {
 }
 
 #footer {
-	border-top: 1px solid #666;
-	margin: 15px 10px;
-	padding: 15px 0;
+  border-top: 1px solid #666;
+  margin: 15px 10px;
+  padding: 15px 0;
 }
 
 #footer p {
-	text-align: center;
+  text-align: center;
 }
 
 /* neat, huh? ;) */
