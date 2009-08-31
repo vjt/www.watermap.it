@@ -61,8 +61,13 @@ var Watermap = {
     // Add buttons behaviour
     Watermap.buttons();
 
-    // Initialize facebox
-    $('a[rel*=facebox]').facebox();
+    // Initialize facebox gallery
+    $('a[href=#gallery]').click(function() {
+      $('#gallery').attr('src', 'http://flickr.com/photos/watermap/show');
+      $.facebox({div: '#gallery'});
+      return false;
+    });
+    //$('a[rel*=facebox]').facebox();
 
     // Save base URI
     Watermap.URI = document.location.href.replace(/#.*/, '');
