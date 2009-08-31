@@ -3,6 +3,8 @@
 //
 // CHANGELOG
 //
+// * Prelaunch phase:
+//
 // 2009-06-23 - Initial release
 // 2009-06-24 - Refactored, wrote documentation
 // 2009-06-24 - Added Google Analytics pageview tracking
@@ -29,9 +31,12 @@
 //              shows the "Contatti" page.
 // 2009-07-12 - Added iPhone banner
 //
+// * Launch phase:
+//
 // 2009-08-31 - Removed the CMS functions, because most of the content is now
 //              on the blog, removed banners handling
 // 2009-08-31 - Implemented the new buttons behaviour
+// 2009-08-31 - Added facebox (http://famspam.com/facebox)
 //
 var Watermap = {
   URI: '',
@@ -39,11 +44,13 @@ var Watermap = {
   addthis : null,
 
   // Initialize the application.
+  //
   // - Initialize Facebook
-  // - Install event handlers on the menu links
-  // - Saves the base URI on which we're called
-  // - If the URI has an #anchor component, load the corresponding page
-  // - If no link is active on the left menu, the first one is activated.
+  // - Install event handlers on the buttons
+  // - Initialize facebox
+  // - Save the base URI on which we're called
+  // - Configure addthis services
+  // - Setup video playing for iPhone
   //
   initialize: function() {
     // Initialize Facebook if not running on Opera
@@ -53,6 +60,9 @@ var Watermap = {
 
     // Add buttons behaviour
     Watermap.buttons();
+
+    // Initialize facebox
+    $('a[rel*=facebox]').facebox();
 
     // Save base URI
     Watermap.URI = document.location.href.replace(/#.*/, '');
@@ -80,23 +90,28 @@ var Watermap = {
   buttons: function() {
     // Add buttons behaviour
     var action_link = $('#homeprint .action .name');
-    var update_action = function() {
-      var href = $(this).attr('href');
-      var text = $.trim($(this).text()) + ' WATERMAP';
+    var all_buttons = $('#homeprint .button');
+
+    all_buttons.mouseover(function() {
+      action_link.stop();
+      action_link.fadeTo(10, 1);
+
+      var link = $(this).find('a');
+      var href = link.attr('href');
+      var text = $.trim(link.text()) + ' WATERMAP';
+
       if (action_link.text() == text)
         return;
 
-      action_link.fadeOut('fast', function() {
+      $(all_buttons).removeClass('highlighted');
+      $(this).addClass('highlighted');
+      action_link.fadeOut(150, function() {
         action_link.text(text);
         action_link.attr('href', href);
-        action_link.fadeIn('fast');
+        action_link.fadeIn(150);
       });
-    };
+    });
 
-    $('#homeprint .download.button a').mouseover(update_action);
-    $('#homeprint .inspect.button a').mouseover(update_action);
-    $('#homeprint .share.button a').mouseover(update_action);
-    
     $('#homeprint [href*=http://www.addthis.com]').live('click', function() {
       return addthis_sendto();
     });
@@ -152,17 +167,6 @@ var Watermap = {
     }
 
   }
-};
-
-// Fade an HTML element to the specified amount. All the $.fn.animate()
-// options are passable via the second optional argument.
-//
-$.fn.fadeTo = function(amount) {
-  var options = $.extend({duration: 'slow'}, arguments[1] || {});
-
-  return this.each(function() {
-    $(this).animate({opacity: amount}, options);
-  });
 };
 
 Array.prototype.include = function(item) {

@@ -163,7 +163,7 @@ div.column {
 
 #homeprint .content .action p {
   font-size: 1.5em;
-  padding: 6px 0 0 22px;
+  padding: 4px 0 0 20px;
   width: 200px;
   height: 32px;
   background: transparent url(../images/checklist.png) no-repeat left top;
@@ -189,13 +189,12 @@ div.column {
   display: none;
 }
 
-#homeprint .button:hover, #homeprint .button.download:hover {
+#homeprint .button.highlighted {
   opacity: 1.0;
 }
 
 #homeprint .button.download {
   background: transparent url(../images/button-download.png) no-repeat left top;
-  opacity: 0.85;
 }
 
 #homeprint .button.inspect {
