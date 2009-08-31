@@ -244,12 +244,13 @@ div.column {
 }
 
 #content .vision {
+  min-height: 910px;
 }
 
 #content .wall {
   background-color: #d6eaea;
   border: 2px solid #2fe4ed;
-  min-height: 900px;
+  min-height: 910px;
 }
 
 #footer {
