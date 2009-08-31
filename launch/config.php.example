@@ -1,0 +1,5 @@
+<?php
+// Lots of configuration!
+//
+define ('MAPFILE', 'path/to/map/file.jpg');
+?>
