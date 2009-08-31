@@ -157,13 +157,13 @@ div.column {
 
 #homeprint .content .action {
   margin: 40px 0 40px;
-  width: 450px;
+  width: 460px;
 }
 
 #homeprint .content .action p {
   font-size: 1.5em;
-  padding: 8px 0 0 25px;
-  width: 180px;
+  padding: 6px 0 0 22px;
+  width: 200px;
   height: 32px;
   background: transparent url(../images/checklist.png) no-repeat left top;
   position: relative;
@@ -174,8 +174,18 @@ div.column {
 #homeprint .button {
   width: 70px;
   height: 70px;
-  margin-left: 10px;
+  margin-left: 5px;
   opacity: 0.45;
+}
+
+#homeprint .button a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#homeprint .button a span {
+	display: none;
 }
 
 #homeprint .button:hover, #homeprint .button.download:hover {

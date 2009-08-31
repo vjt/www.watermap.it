@@ -30,7 +30,9 @@
 // 2009-07-12 - Added iPhone banner
 //
 // 2009-08-31 - Removed the CMS functions, because most of the content is now
-//              on the blog.
+//              on the blog, removed banners handling
+// 2009-08-31 - Implemented the new buttons behaviour
+//
 var Watermap = {
   URI: '',
   tracker : null,
@@ -49,9 +51,8 @@ var Watermap = {
       Watermap.initFB(true);
     }
 
-    $('#menu .right a[href*=http://www.addthis.com/]').click(function() {
-      return addthis_sendto();
-    });
+    // Add buttons behaviour
+    Watermap.buttons();
 
     // Save base URI
     Watermap.URI = document.location.href.replace(/#.*/, '');
@@ -74,13 +75,40 @@ var Watermap = {
     Watermap.videoTest();
   },
 
+  // TODO: documentation
+  //
+  buttons: function() {
+    // Add buttons behaviour
+    var action_link = $('#homeprint .action .name');
+    var update_action = function() {
+      var href = $(this).attr('href');
+      var text = $.trim($(this).text()) + ' WATERMAP';
+      if (action_link.text() == text)
+        return;
+
+      action_link.fadeOut('fast', function() {
+        action_link.text(text);
+        action_link.attr('href', href);
+        action_link.fadeIn('fast');
+      });
+    };
+
+    $('#homeprint .download.button a').mouseover(update_action);
+    $('#homeprint .inspect.button a').mouseover(update_action);
+    $('#homeprint .share.button a').mouseover(update_action);
+    
+    $('#homeprint [href*=http://www.addthis.com]').live('click', function() {
+      return addthis_sendto();
+    });
+  },
+
   // Check whether the users has got the 9.0.0 flash player, and embed it if he/she does.
   // If we're being rendered on the iPhone, remove the #video object, and show the other
   // one (#iphone-video) that contains an <embed> that MobileSafari replaces with an YT
   // poster image, making it viewable from the iPhone too.
   // If no flash player neither iPhone is available, show an error message into the box.
   //
-  videoTest: function(options) {
+  videoTest: function() {
 
     if (swfobject.hasFlashPlayerVersion('9.0.0')) {
       $('#iphone-video').remove();
