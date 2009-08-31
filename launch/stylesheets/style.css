@@ -1,7 +1,7 @@
 /* Handcrafted by vjt@openssl.it (C) 2009 */
 /* http://sindro.me/ */
 
-/** Base HTML Elements */
+/** Basic HTML Elements */
 body {
   font-family: helvetica, arial, verdana, sans-serif;
   font-size: 9pt;
@@ -209,15 +209,38 @@ div.column {
 }
 
 #content {
+	background: transparent url(../images/bg-content.png) repeat-x scroll left top;
 }
 
 #content .separator {
 	text-align: center;
 	font-size: 1.2em;
 	position: relative;
-	top: -90px;
+	top: -120px;
 	line-height: 1.4;
-	height: 5px;
+}
+
+
+/** Badge */
+#badge {
+  background: transparent url(../images/badge.png) no-repeat scroll left top;
+  position: absolute;
+  top: 620px;
+  left: 45%;
+  height: 160px;
+  width: 160px;
+  opacity: 0.6;
+}
+
+#badge:hover {
+  opacity: 1.0;
+}
+
+
+#badge a {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 #content .vision {
@@ -226,7 +249,7 @@ div.column {
 #content .wall {
   background-color: #d6eaea;
   border: 2px solid #2fe4ed;
-  min-height: 600px;
+  min-height: 900px;
 }
 
 #footer {
