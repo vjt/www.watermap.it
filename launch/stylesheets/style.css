@@ -162,9 +162,9 @@ div.column {
 }
 
 #homeprint .content .action p {
-  font-size: 1.5em;
+  font-size: 1.45em;
   padding: 4px 0 0 20px;
-  width: 200px;
+  width: 210px;
   height: 32px;
   background: transparent url(../images/checklist.png) no-repeat left top;
   position: relative;
@@ -235,8 +235,8 @@ div.column {
 #badge {
   background: transparent url(../images/badge.png) no-repeat scroll left top;
   position: absolute;
-  top: 620px;
-  left: 45%;
+  top: 590px;
+  right: 12%;
   height: 160px;
   width: 160px;
   opacity: 0.6;
