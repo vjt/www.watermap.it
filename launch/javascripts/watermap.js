@@ -67,7 +67,11 @@ var Watermap = {
       $.facebox({div: '#gallery'});
       return false;
     });
-    //$('a[rel*=facebox]').facebox();
+    $('a[href=#browse]').click(function() {
+      $.facebox({div: '#browse'});
+      $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'bottom', title: false, xOffset: 0, yOffset: 10, alwaysOn: true});
+    });
+    $(document).bind('close.facebox', function() { $('.jqZoomWindow').remove() });
 
     // Save base URI
     Watermap.URI = document.location.href.replace(/#.*/, '');
