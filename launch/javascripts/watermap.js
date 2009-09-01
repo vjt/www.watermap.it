@@ -144,11 +144,11 @@ var Watermap = {
         $.facebox({div: '#browse-ie'});
       } else {
         $.facebox({div: '#browse'});
-        $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'bottom', title: false, xOffset: -248, yOffset: 185, alwaysOn: true, position: 'relative'});
+        $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'relative', title: false, xOffset: -248, yOffset: 185, alwaysOn: true});
       }
       return false;
     });
-    $(document).bind('close.facebox', function() { $('.jqZoomWindow').remove() });
+    $(document).bind('close.facebox', function() { $('.jqZoomWindow, .preload').remove() });
   },
 
   // Check whether the users has got the 9.0.0 flash player, and embed it if he/she does.

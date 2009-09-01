@@ -1109,7 +1109,8 @@
 							top: loadertop  ,
 							left: loaderleft ,
 							position: 'absolute',
-							visibility:'visible'
+							visibility:'visible',
+              'z-index': 1000
 					    	});
 			}
 			return this;
