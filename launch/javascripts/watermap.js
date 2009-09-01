@@ -112,17 +112,17 @@ var Watermap = {
       });
     });
 
-    $('a[href=download.php]').click(function() {
+    $('a[href=download.php]').live('click', function() {
       try { Watermap.tracker._trackPageview('/download.php') } catch(err) { };
-    })
+    });
 
     $('#homeprint .button.inspect a').click(function() {
       try { Watermap.tracker._trackPageview('/browse.php') } catch(err) { };
-    })
+    });
 
     $('#homeprint .button.share a').click(function() {
       try { Watermap.tracker._trackPageview('/share.php') } catch(err) { };
-    })
+    });
 
     $('#homeprint [href*=http://www.addthis.com]').live('click', function() {
       return addthis_sendto();
