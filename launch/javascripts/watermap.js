@@ -127,8 +127,13 @@ var Watermap = {
 
     // Initialize facebox browsing
     $('a[href=#browse]').click(function() {
-      $.facebox({div: '#browse'});
-      $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'bottom', title: false, xOffset: 0, yOffset: 10, alwaysOn: true});
+      if ($.browser.msie) { // IE, I HATE YOU!
+        $('#browse-ie').attr('src', 'browse.php');
+        $.facebox({div: '#browse-ie'});
+      } else {
+        $.facebox({div: '#browse'});
+        $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'bottom', title: false, xOffset: -248, yOffset: 185, alwaysOn: true, position: 'relative'});
+      }
       return false;
     });
     $(document).bind('close.facebox', function() { $('.jqZoomWindow').remove() });
