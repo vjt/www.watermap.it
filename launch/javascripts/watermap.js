@@ -139,7 +139,7 @@ var Watermap = {
 
     // Initialize facebox browsing
     $('a[href=#browse]').click(function() {
-      if ($.browser.msie) { // IE, I HATE YOU!
+      if ($.browser.msie || $.browser.opera) {
         $('#browse-ie').attr('src', 'browse.php');
         $.facebox({div: '#browse-ie'});
       } else {
