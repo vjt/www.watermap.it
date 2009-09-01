@@ -9,9 +9,9 @@ function stream_map_file($attachment = true) {
     ($attachment ? 'attachment; filename=' . basename(MAPFILE) : 'inline'));
 
   header('Content-Transfer-Encoding: binary');
-  header('Expires: 0');
-  header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-  header('Pragma: public');
+  //header('Expires: 0');
+  //header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+  //header('Pragma: public');
   header('Content-Length: ' . filesize(MAPFILE));
 
   ob_clean();
