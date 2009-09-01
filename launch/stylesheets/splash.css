@@ -1,9 +1,16 @@
 body {
   font-family: Helvetica, Arial, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 p {
+	margin: 13px 0 0;
   text-align: center;
+}
+
+small {
+	font-size: 0.7em;
 }
 
 .clear {
@@ -11,7 +18,7 @@ p {
 }
 
 #back {
-  margin-top: 20px;
+  margin-top: 10px;
   float: left;
 }
 
@@ -25,38 +32,96 @@ p {
   text-decoration: underline;
 }
 
+#background {
+	width: 740px;
+	height: 420px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#background .left {
+	float: left;
+	width: 355px;
+	height: 100%;
+  background: transparent url(../images/homeprint-bg.jpg) no-repeat -32px -20px;
+}
+
+#background .right {
+	float: right;
+	width: 385px;
+	height: 100%;
+  background: transparent url(../images/bg.png) repeat-x left -20px;
+}
+
+#content {
+	height: 0;
+	margin: 0 auto;
+	position: relative;
+	top: -375px;
+}
+
 #logo {
-	width:361px;
-	height:125px;
-	margin: 90px auto 0;
-	background: #fff url(../images/splash.png) no-repeat scroll center center;
+	margin: 0 auto;
+	width: 416px;
+	height: 88px;
+	background: #fff url(../images/logo.png) no-repeat scroll center center;
 }
 
 #logo a {
   width: 100%;
   height: 100%;
   display: block;
+	margin: auto auto;
 }
 
 #logo a:hover {
-  border: 1px solid #ddd;
+  border-top: 6px solid #f2fafd;
+  border-right: 6px solid #f2fafd;
+  border-left: 6px solid #f2fafd;
 }
 
-#blurb {
-  margin: 30px auto;
+#map {
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 350px;
+	height: 300px;
+	z-index: 10;
+}
+
+.blurb {
+  margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
+	width: 365px;
+	position: relative;
+	left: 170px;
+	top: -25px;
 }
 
-#anchor a {
+.fb.fanbox {
+	height: 60px;
+	width: 220px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	top: -15px;
+	left: 170px;
+}
+
+.anchor {
   font-size: 24px;
+}
+
+.anchor a {
   font-weight: bold;
   text-decoration: none;
   color: rgb(0, 130, 131);
-  padding: 2px;
+  padding: 2px 0 0;
 }
 
-#anchor a:hover {
+.anchor a:hover {
   color: #fff;
   background-color: rgb(0, 130, 131);
 }
