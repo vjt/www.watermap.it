@@ -112,7 +112,7 @@ var Watermap = {
       });
     });
 
-    $('#homeprint .button.download a').click(function() {
+    $('a[href=download.php]').click(function() {
       try { Watermap.tracker._trackPageview('/download.php') } catch(err) { };
     })
 

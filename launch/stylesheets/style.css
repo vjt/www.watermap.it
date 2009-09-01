@@ -226,8 +226,15 @@ div.column {
   text-align: center;
   font-size: 1.2em;
   position: relative;
-  top: -100px;
+  top: -130px;
   line-height: 1.4;
+}
+
+#content .institutions {
+	height: 25px;
+	position: relative;
+  left: 20px;
+	top: -110px;
 }
 
 
@@ -235,7 +242,7 @@ div.column {
 #badge {
   background: transparent url(../images/badge.png) no-repeat scroll left top;
   position: absolute;
-  top: 590px;
+  top: 610px;
   right: 12%;
   height: 160px;
   width: 160px;
