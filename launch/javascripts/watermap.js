@@ -55,10 +55,8 @@ var Watermap = {
   // - Setup video playing for iPhone
   //
   initialize: function() {
-    // Initialize Facebook if not running on Opera
-    if (!$.browser.opera) {
-      Watermap.initFB(true);
-    }
+    // Initialize Facebook
+    Watermap.initFB(true);
 
     // Add buttons behaviour
     Watermap.buttons();

@@ -48,7 +48,7 @@ div.page {
 }
 
 div.column {
-  width: 48.5%;
+  width: 47.5%;
 }
 
 
@@ -271,7 +271,7 @@ div.column {
   background-color: #d6eaea;
   border: 2px solid #8eccd7;
   min-height: 910px;
-  padding: 5px 0 0 10px;
+  padding: 5px 10px 0;
 }
 
 #browse {
@@ -296,6 +296,10 @@ div.column {
   font-size: 2em;
   margin: 0;
   padding: 0.8em 0;
+}
+
+#fanbox {
+	margin: 40px 0 0;
 }
 
 #footer {
