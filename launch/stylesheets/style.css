@@ -24,7 +24,7 @@ a:visited, a:hover {
 p {
   margin-bottom: 10px;
   line-height: 1.2;
-  /*text-align: justify; */
+  text-align: justify;
 }
 
 strong {
