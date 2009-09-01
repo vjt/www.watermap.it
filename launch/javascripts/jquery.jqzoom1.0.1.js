@@ -31,7 +31,7 @@
 			fadeoutSpeed: 'slow',
 			preloadImages :true,
 			showPreload: true,
-			preloadText : 'Loading zoom',
+			preloadText : 'Carico',
 			preloadPosition : 'center'   //bycss
         };
 
@@ -116,10 +116,10 @@
 
 				if ( !running ) {
 
+					running = true;
 					//finding border
 					smallimage.findborder();
 
-					running = true;
 
 					//rimuovo il titolo al mouseover
 					imageTitle = img.attr('title');
@@ -141,11 +141,15 @@
 					//after preload
 						if(settings.zoomType != 'innerzoom')
 						{
-							stage = new Stage();
-							stage.activate();
+              if (!stage) {
+								stage = new Stage();
+								stage.activate();
+              }
 						}
-						lens = new Lens;
-						lens.activate();
+            if (!lens) {
+							lens = new Lens;
+							lens.activate();
+            }
 					}
 
 					//hack per MAC
@@ -438,7 +442,7 @@
 					height: lensdata.h + 'px',
 					position: 'absolute',
 					/*cursor: 'crosshair',*/
-					display: 'none',
+					/*display: 'none',*/
 					//border: '1px solid blue'
 					borderWidth: 1+'px'
 				});
@@ -798,7 +802,7 @@
 				this.node = new Image();
 
 				this.node.style.position = 'absolute';
-				this.node.style.display = 'none';
+				//this.node.style.display = 'none';
 				this.node.style.left = '-5000px';
 				this.node.style.top = '10px';
 				loader = new Loader();
@@ -819,7 +823,7 @@
 				var w = Math.round($(this).width());
 				var	h = Math.round($(this).height());
 
-				this.style.display = 'none';
+				//this.style.display = 'none';
 
 				//setting scale
 				scale.x = (w / smallimagedata.w);
@@ -836,7 +840,7 @@
 
 				largeimageloaded = true;
 
-				if(settings.zoomType != 'innerzoom' && running){
+				if(settings.zoomType != 'innerzoom' && running && !stage){
 					stage = new Stage();
 					stage.activate();
 				}
@@ -895,7 +899,7 @@
 
 			$( this.node )
 				.css({
-					position: 'absolute',
+          position: settings.position == 'relative' ? 'relative' : 'absolute',
 					width: Math.round(settings.zoomWidth) + 'px',
 					height: Math.round(settings.zoomHeight) + 'px',
 					display: 'none',
@@ -957,6 +961,10 @@
 				: smallimagedata.pos.l;
 
 		    	break;
+          case 'relative':
+          leftpos = settings.xOffset;
+          toppos = settings.yOffset;
+          break;
 		    	default:
 
 				leftpos = (smallimagedata.pos.l + smallimagedata.w + settings.xOffset + settings.zoomWidth < screen.width)
@@ -979,6 +987,9 @@
 		Stage.prototype.activate = function()
 		{
 
+      //if($('.jqZoomWindow').length > 0)
+      //  return;
+
 			if ( !this.node.firstChild )
 					this.node.appendChild( largeimage.node );
 
@@ -989,8 +1000,10 @@
 			}
 
 
-
-			document.body.appendChild( this.node );
+      if (settings.position == 'relative')
+        $(smallimage.node).parent().parent()[0].appendChild(this.node);
+      else
+        document.body.appendChild( this.node );
 
 
 			switch(settings.showEffect)
