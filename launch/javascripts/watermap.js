@@ -37,7 +37,7 @@
 //              on the blog, removed banners handling
 // 2009-08-31 - Implemented the new buttons behaviour
 // 2009-08-31 - Added facebox (http://famspam.com/facebox)
-// 2009-08-31 - Added jqzoom
+// 2009-08-31 - Added jqzoom (http://www.mind-projects.it/projects/jqzoom/index.php)
 // 2009-09-01 - See the commit log on GitHub ;)
 //
 var Watermap = {
@@ -182,7 +182,7 @@ var Watermap = {
   //
   initFB: function(full) {
     if ($.browser.opera) {
-      $('#action').html('<p class="fberror" style="text-align:left;">Caro utente Opera,</p>' +
+      $('#content .wall').html('<p class="fberror" style="text-align:left;">Caro utente Opera,</p>' +
         '<p class="fberror">ci dispiace, ma questa bacheca &egrave; realizzata con facebook connect, il quale non funziona, attualmente, con il tuo browser.</p>' +
         '<p class="fberror">Per leggere e scrivere commenti in questa sezione, ti preghiamo di usare un altro browser.</p>' +
         '<p class="fberror">Grazie e... perdonaci per il disagio :-)</p>' +
@@ -198,7 +198,7 @@ var Watermap = {
         FB.init();
       }
     } catch (err) {
-      $('#action').html('<p class="fberror">Errore durante l\'inizializzazione di Facebook Connect :-(</p>' +
+      $('#content .wall').html('<p class="fberror">Errore durante l\'inizializzazione di Facebook Connect :-(</p>' +
         '<p class="fberror">Prova a <a href="' + Watermap.URI + '">ricaricare</a> la pagina.</p>');
     }
 
