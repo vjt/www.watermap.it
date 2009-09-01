@@ -226,7 +226,7 @@ div.column {
   text-align: center;
   font-size: 1.2em;
   position: relative;
-  top: -120px;
+  top: -100px;
   line-height: 1.4;
 }
 
@@ -260,7 +260,7 @@ div.column {
 
 #content .wall {
   background-color: #d6eaea;
-  border: 2px solid #2fe4ed;
+  border: 2px solid #8eccd7;
   min-height: 910px;
   padding: 5px 0 0 5px;
 }
@@ -290,8 +290,8 @@ div.column {
 }
 
 #footer {
-  border-top: 1px solid #666;
-  margin: 15px 10px;
+  border-top: 2px solid #8eccd7;
+  margin: 15px 0;
   padding: 15px 0;
 }
 
