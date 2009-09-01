@@ -1,5 +1,5 @@
-// (C) 2009 vjt@openssl.it
-// http://sindro.me/
+// (C) 2009 vjt@openssl.it - http://sindro.me/
+//    http://github.com/vjt/www.watermap.it
 //
 // CHANGELOG
 //
@@ -37,6 +37,8 @@
 //              on the blog, removed banners handling
 // 2009-08-31 - Implemented the new buttons behaviour
 // 2009-08-31 - Added facebox (http://famspam.com/facebox)
+// 2009-08-31 - Added jqzoom
+// 2009-09-01 - See the commit log on GitHub ;)
 //
 var Watermap = {
   URI: '',
