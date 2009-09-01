@@ -61,17 +61,8 @@ var Watermap = {
     // Add buttons behaviour
     Watermap.buttons();
 
-    // Initialize facebox gallery
-    $('a[href=#gallery]').click(function() {
-      $('#gallery').attr('src', 'http://flickr.com/photos/watermap/show');
-      $.facebox({div: '#gallery'});
-      return false;
-    });
-    $('a[href=#browse]').click(function() {
-      $.facebox({div: '#browse'});
-      $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'bottom', title: false, xOffset: 0, yOffset: 10, alwaysOn: true});
-    });
-    $(document).bind('close.facebox', function() { $('.jqZoomWindow').remove() });
+    // Initialize faceboxes
+    Watermap.faceboxes();
 
     // Save base URI
     Watermap.URI = document.location.href.replace(/#.*/, '');
@@ -124,6 +115,23 @@ var Watermap = {
     $('#homeprint [href*=http://www.addthis.com]').live('click', function() {
       return addthis_sendto();
     });
+  },
+
+  faceboxes: function() {
+    // Initialize facebox gallery
+    $('a[href=#gallery]').click(function() {
+      $('#gallery').attr('src', 'http://flickr.com/photos/watermap/show');
+      $.facebox({div: '#gallery'});
+      return false;
+    });
+
+    // Initialize facebox browsing
+    $('a[href=#browse]').click(function() {
+      $.facebox({div: '#browse'});
+      $('#facebox #browse > a').jqzoom({zoomWidth: 740, zoomHeight: 310, position: 'bottom', title: false, xOffset: 0, yOffset: 10, alwaysOn: true});
+      return false;
+    });
+    $(document).bind('close.facebox', function() { $('.jqZoomWindow').remove() });
   },
 
   // Check whether the users has got the 9.0.0 flash player, and embed it if he/she does.
