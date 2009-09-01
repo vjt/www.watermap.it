@@ -229,25 +229,24 @@ div.column {
 }
 
 #content .institutions {
-	height: 30px;
-	position: relative;
+  height: 30px;
+  position: relative;
   left: 30px;
-	top: -110px;
+  top: -110px;
 }
 
 #content .institutions img {
-	margin: 0 5px;
+  margin: 0 5px;
 }
 
 
 /** Badge */
 #badge {
-  background: transparent url(../images/badge.png) no-repeat scroll left top;
-  position: absolute;
-  top: 610px;
-  right: 16%;
-  height: 160px;
-  width: 160px;
+  float: right;
+  position: relative;
+  top: -150px;
+  right: 40px;
+  height: 0;
   opacity: 0.6;
 }
 
@@ -258,9 +257,10 @@ div.column {
 
 #badge a {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 160px;
+  height: 160px;
 }
+
 
 #content .vision {
   font-size: 1.20em;
