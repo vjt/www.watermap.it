@@ -239,6 +239,12 @@ div.column {
   margin: 0 5px;
 }
 
+#content .institutions p {
+	margin: 0 0 5px;
+	text-align: center;
+	width: 350px;
+}
+
 
 /** Badge */
 #badge {
