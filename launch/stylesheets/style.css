@@ -93,7 +93,7 @@ div.column {
 #header {
   width: 950px !important;
   height: 116px;
-  background-color: #f5fbfe;
+  background: transparent url(../images/bg-header.png) repeat-x left top;
 }
 
 #header .image {
@@ -126,7 +126,7 @@ div.column {
 #homeprint .banner {
   width: 450px;
   height: 580px;
-  background: transparent url(../images/homeprint-bg.jpg) no-repeat left top;
+  background: transparent url(../images/bg-homeprint.jpg) no-repeat left top;
 }
 
 #homeprint .banner .link {
@@ -241,7 +241,7 @@ div.column {
 
 #content .institutions p {
 	margin: 0 0 5px;
-	text-align: center;
+	/*text-align: center;*/
 	width: 350px;
 }
 
