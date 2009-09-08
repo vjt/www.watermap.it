@@ -146,6 +146,7 @@ div.column {
   width: 230px;
   margin: 0;
   text-align: left;
+	line-height: 1.35;
 }
 
 #homeprint .content {
