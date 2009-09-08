@@ -142,7 +142,7 @@ div.column {
   position: relative;
   top: 50px;
   left: 130px;
-  font-size: 1.7em;
+  font-size: 1.45em;
   width: 230px;
   margin: 0;
   text-align: left;
@@ -230,6 +230,7 @@ div.column {
 
 #content .institutions {
   height: 30px;
+  width: 400px;
   position: relative;
   left: 30px;
   top: -110px;
